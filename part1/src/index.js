@@ -9,6 +9,7 @@ import App4 from "./App4";
 import App5 from "./App5";
 import AppPosts from "./AppPosts";
 import AppPhoneBook from "./AppPhoneBook";
+import AppCountries from "./AppCountries";
 //Forma corta
 // const Title = ({course}) => <h1>{course}</h1>
 
@@ -77,4 +78,4 @@ const notes = [
 //   );
 // };
 
-ReactDOM.render(<AppPosts/>, document.getElementById("root"));
+ReactDOM.render(<AppCountries/>, document.getElementById("root"));
