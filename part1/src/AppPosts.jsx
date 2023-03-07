@@ -7,6 +7,7 @@ import axios from "axios";
 
 const AppPosts = () => {
   const [posts, setPosts] = useState([]);
+  console.log("🚀 ~ file: AppPosts.jsx:10 ~ AppPosts ~ posts:", posts);
   const [newPost, setNewPost] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -18,15 +19,19 @@ const AppPosts = () => {
     //   .then((json) => {
     //     console.log(json);
     //   });
-    console.log("effect");
-    const promise = axios.get("http://localhost:3001/notes");
-    console.log(promise);
+    // const promise = axios.get("http://localhost:3001/notes");
+    // console.log(promise);
     setLoading(true);
-    getAllNotes().then((posts) => {
-      console.log("promise fulfilled");
-      setPosts(posts);
-      setLoading(false);
-    });
+    getAllNotes()
+      .then((posts) => {
+        console.log("promise fulfilled");
+        console.log("🚀 ~ file: AppPosts.jsx:30 ~ getAllNotes ~ posts", posts);
+        setPosts(posts);
+        setLoading(false);
+      })
+      .catch((e) => {
+        console.error();
+      });
   }, []);
 
   console.log("render", posts.length, "notes");

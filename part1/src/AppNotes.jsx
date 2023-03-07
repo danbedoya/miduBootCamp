@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Note from "./components/Note";
 import Posts from "./components/Posts";
 import { useState } from "react";
+import axios from "axios";
+import { getAllNotes } from "./services/notes/getAllNotes";
 
-const App4 = (props) => {
-  const [notes, setNotes] = useState(props.notes);
+const AppNotes = () => {
+  const [notes, setNotes] = useState([]);
+  console.log("🚀 ~ file: AppNotes.jsx:10 ~ AppNotes ~ notes:", notes);
   const [newNote, setNewNote] = useState("");
   const [showAll, setShowAll] = useState(true);
+
+  useEffect(() => {
+    getAllNotes().then((notes) => {
+      console.log("promise fulfilled", notes);
+      setNotes(notes);
+    });
+  }, []);
 
   const handleChange = (event) => {
     setNewNote(event.target.value);
@@ -40,7 +50,7 @@ const App4 = (props) => {
           .map((note) => (
             <Note
               key={note.id}
-              content={note.content}
+              content={note.title}
               date={note.date}
               categories={note.categories}
             />
@@ -54,4 +64,4 @@ const App4 = (props) => {
   );
 };
 
-export default App4;
+export default AppNotes;

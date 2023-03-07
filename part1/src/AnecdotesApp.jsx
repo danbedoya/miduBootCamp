@@ -13,7 +13,7 @@ const Anecdote = ({ text, votes }) => {
   );
 };
 
-const App3 = ({ anecdotes }) => {
+const AnecdotesApp = ({ anecdotes }) => {
   const points = {
     0: 0,
     1: 0,
@@ -67,4 +67,4 @@ const App3 = ({ anecdotes }) => {
   );
 };
 
-export default App3;
+export default AnecdotesApp;

@@ -71,7 +71,7 @@ const Statistics = ({ good, neutral, bad }) => {
   );
 };
 
-const App2 = () => {
+const ClientsFeedbackCoffee = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
@@ -95,4 +95,4 @@ const App2 = () => {
   );
 };
 
-export default App2;
+export default ClientsFeedbackCoffee;

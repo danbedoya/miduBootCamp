@@ -1,7 +1,7 @@
 import React from "react";
 import Course from "./components/Course";
 
-const App5 = () => {
+const AppCourseInfo = () => {
   const courses = [
     {
       id: 1,
@@ -49,4 +49,4 @@ const App5 = () => {
   return <Course courses={courses} />;
 };
 
-export default App5;
+export default AppCourseInfo;

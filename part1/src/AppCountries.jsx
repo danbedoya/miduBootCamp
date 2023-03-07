@@ -20,9 +20,9 @@ const FilteredCountries = ({ countries, countryTofind }) => {
         foundCountries.length !== 0 &&
         foundCountries.map((country) => {
           return (
-            <ol>
+            <ul>
               <li>{country.name.official}</li>
-            </ol>
+            </ul>
           );
         })}
     </>
